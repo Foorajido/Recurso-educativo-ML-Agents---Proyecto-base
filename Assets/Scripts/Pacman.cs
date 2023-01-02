@@ -17,7 +17,7 @@ public class Pacman : MonoBehaviour
 
     private void Update()
     {
-        // Set the new direction based on the current input
+        // Establece la dirección de movimiento basado en la entrada del jugador.
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
             movement.SetDirection(Vector2.up);
         }
@@ -31,7 +31,7 @@ public class Pacman : MonoBehaviour
             movement.SetDirection(Vector2.right);
         }
 
-        // Rotate pacman to face the movement direction
+        // Rota Pacman para mirar hacia la dirección del movimiento.
         float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
